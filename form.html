@@ -4,20 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>Aplicação de Exemplo</title>
 </head>
 
 <body>
-  <h1>Aplicação de Exemplo</h1>
+  <h1 class="font-weight-bold">Aplicação de Exemplo</h1>
   <form action="" method="GET">
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome">
 
-    <label for="email">email</label>
+    <label for="email">Email</label>
     <input type="email" name="email" id="email">
 
-    <input type="submit" value="Enviar">
-    <input type="button" onclick="listar()" value="Enviar">
+    <input class="btn btn-primary" type="submit" value="Enviar">
+    <a class="btn btn-warning" href="/listar">Listar</a>
+
   </form>
 </body>
 

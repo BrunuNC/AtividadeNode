@@ -9,6 +9,12 @@ var server = http.createServer(function(req, res) {
       res.write(data);
       res.end();
     });
+  } else if (req.url == '/listar') {
+    fs.readFile('cadastro.txt', function(err, data) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      res.write(data);
+      res.end();
+    });
   } else {
     const q = url.parse(req.url, true);
     const nome = q.query.nome;
@@ -34,13 +40,6 @@ var server = http.createServer(function(req, res) {
     });
   }
 });
-
-function listar() {
-  fs.readFile('./cadastro.txt', 'utf-8', function(err, data) {
-    if (err) throw err;
-    console.log(data);
-  });
-}
 
 server.listen(3000);
 console.log('Servidor rodando na porta 3000');

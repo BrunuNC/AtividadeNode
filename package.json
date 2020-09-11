@@ -1,0 +1,13 @@
+{
+  "name": "aula-node",
+  "version": "1.0.0",
+  "main": "form-app.js",
+  "scripts": {
+    "start": "node ./form-app.js",
+    "dev": "nodemon --inspect ./form-app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {}
+}
