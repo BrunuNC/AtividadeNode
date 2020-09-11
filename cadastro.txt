@@ -1,2 +1,4 @@
 Nome: undefined Email: undefined
 Nome: bla Email: teste@gmail.com
+undefined Email: undefined
+Bruno Email: bla@gmail.com

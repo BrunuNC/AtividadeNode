@@ -21,20 +21,22 @@ var server = http.createServer((req, res) => {
     const email = q.query.email;
 
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.write(`<html>`);
-    res.write(`<head>`);
-    res.write(`<title> Resposta Formulário </title>`);
-    res.write(`</head>`);
-    res.write(`<body>`);
-    res.write(`<h1>Olá ${nome} </h1>`);
-    res.write(`<h2> Confirme seus dados:</h2>`);
-    res.write(`<p> Seu nome: ${nome} </p>`);
-    res.write(`<p> Seu email: ${email} </p>`);
-    res.write(`</body>`);
-    res.write(`<html>`);
+    const resposta =
+      `<html>
+      <head>
+      <title> Resposta Formulário </title>
+      </head>
+      <body>
+        <h1>Olá ${nome} </h1>
+        <h2> Confirme seus dados:</h2>
+        <p> Seu nome: ${nome} </p>
+        <p> Seu email: ${email} </p>
+      </body>
+    </html>`
+    res.write(resposta);
     res.end();
 
-    fs.appendFile('cadastro.txt', `Nome: ${nome} Email: ${email}` + '\n', (err) => {
+    fs.appendFile('cadastro.txt', `${nome} Email: ${email}` + '\n', (err) => {
       if (err) throw err;
       console.log('Salvo com Sucesso!');
     });
