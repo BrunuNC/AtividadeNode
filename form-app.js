@@ -36,7 +36,7 @@ var server = http.createServer((req, res) => {
     res.write(resposta);
     res.end();
 
-    fs.appendFile('cadastro.txt', `${nome} Email: ${email}` + '\n', (err) => {
+    fs.appendFile('cadastro.txt', `Nome: ${nome} Email: ${email}` + '\n', (err) => {
       if (err) throw err;
       console.log('Salvo com Sucesso!');
     });
